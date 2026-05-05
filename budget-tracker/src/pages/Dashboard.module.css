@@ -1,0 +1,67 @@
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+  align-items: start;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.txCard {}
+
+.txList {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -8px;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--text3);
+  padding: 8px 0 4px;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--text3);
+  margin-top: 12px;
+  padding: 0 8px;
+  transition: color var(--transition);
+}
+
+.viewAll:hover { color: var(--accent); }
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .statGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .statGrid > *:last-child {
+    grid-column: span 2;
+  }
+}
